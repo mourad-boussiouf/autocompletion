@@ -1,0 +1,5 @@
+form input {
+    background-color: var(--theme-accent-color);
+    border-color: var(--theme-accent-color);
+    color: var(--theme-accent-label-color);
+}
