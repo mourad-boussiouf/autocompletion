@@ -1,28 +1,14 @@
 <?php 
 
-$bdd = new PDO("mysql:host = localhost ; dbname=autocompletion", 'root', '');
-
-if (isset($_POST['seachbox1'])) {
-	$search1 = $_POST['searchbox1'];
     $bdd = new PDO("mysql:host = localhost ; dbname=autocompletion", 'root', '');
-    $var = $bdd->prepare("SELECT personnages FROM autocompletion WHERE personnages LIKE '%".$search1."%' ORDER BY id DESC LIMIT 10");
+    $var = $bdd->prepare("SELECT * FROM personnages");
     $var->execute();
-    $result = $var->PDOStatement::fetch();
+    $result = $var->fetchAll(PDO::FETCH_COLUMN, 1);
 
     echo json_encode($result);
 
 
 
-    if (empty($result)) {
-       
-            $match = false;
-            echo json_encode([]);
 	
-		
-        
-	}
 
-
-	
-}
 ?>
