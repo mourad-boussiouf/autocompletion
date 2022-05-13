@@ -7,21 +7,31 @@ const spancomplete1 = document.getElementById('search_result1');
 const spancomplete2 = document.getElementById('search_result2');
 
 
-// search the json $result 
+// renvoi tous les persos de la bdd en json à chaque fois qu'une lettre est tapée dans l'un des deux champs
 
-const searchSaiyan = async searchAll =>{
+const searchSaiyan1 = async searchAll =>{
+    
+    const res = await fetch ('traitement.php');
+    const persos = await res.json();
+
+    let matches = persos.filter(perso => {
+        const regex = new RegExp(`^${searchAll}` );
+    });
+};
+
+ const searchSaiyan2 = async searchAll =>{
     
     const res = await fetch ('traitement.php');
     const persos = await res.json();
 
     console.log(persos);
-};
+};  
 
-searchinputs1.addEventListener('input', () => searchSaiyan(searchinputs1.value));
+searchinputs1.addEventListener('keypress', () => searchSaiyan1(searchinputs1.value));
 
 
 
-searchinputs2.addEventListener('input', () => searchSaiyan(searchinputs2.value));
+ searchinputs2.addEventListener('input', () => searchSaiyan2(searchinputs2.value));
 
 
 })

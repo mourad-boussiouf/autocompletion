@@ -5,7 +5,9 @@
     $var->execute();
     $result = $var->fetchAll(PDO::FETCH_COLUMN, 1);
 
+    if (isset($result)) {
     echo json_encode($result);
+    }
 
 
 
