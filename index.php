@@ -1,27 +1,35 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<title>Dbz</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/style.css">
-	<script src="js/script.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-</head>
-<div class="p-3 mb-2 bg-warning text-dark">
-<body>
-	<header>
-<?php include('header.php');?>
-	</header>
+<?php 
+include_once "header.php";
+include_once "PersonnagesClass.php";
 
+Personnages::LoadAllDDB();
+?>
 
+<section id="search-engine">
 
+<a href="index.php">
+<img src="https://upload.wikimedia.org/wikipedia/fr/f/f2/Dragon_Ball_Z_Logo.svg" alt="Logo de dragon ball z">
+</a>
 
-<div class="bouton-fusion">
-	<button> FUSION!</button>
-</div>
+<form action="recherche.php" method="get" class="search-form">
+   
 
-</div>
-</body>
-</html>
+    <div class="field">
+            <input type="text" name="search" class="search-bar" placeholder="Chercher un personnage" autocomplete="off">
+            <div class="suggestions">
+                <ul></ul>
+            </div>
+        <button type="button" class="btn reset-btn"> </button>
+    </div>
+    
+    <input type="submit" value="🔎🔎🔎" class="btn search-btn">
+</form>
+<h1 class="err-msg"></h1>
+
+</section>
+
+<?php 
+include_once "footer.php" ;
+include_once "PersonnagesClass.php";
+$_POST['all'] = Personnages::searchAll();
+?>
