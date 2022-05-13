@@ -23,7 +23,7 @@
     <a href="index.php">
     <img src="https://upload.wikimedia.org/wikipedia/fr/f/f2/Dragon_Ball_Z_Logo.svg" alt="Logo de dragon ball z">
     </a>
-    <h1> Search a dbz character !</h1>
+    <h4> Search a dbz character !</h4>
     <form action="recherche.php" method="get" class="searchform">
 
        
