@@ -1,10 +1,45 @@
 body {
-    margin: 0;
-    padding: 0;
+margin: 0;
+padding: 0;
 }
+
 header {
 background-color: #FFC107;
+s
+
+}
+button {
+display: none;
+}
+
+#footergit
+{
 text-align: center;
+}
+
+#search-engine {
+display: flex;
+justify-content: center;
+}
+
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
+    background:#d78501;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+h1 {
+text-align: center;
+}
+
+#logodiv{
+display: flex;
+justify-content: center;
 }
 
 h4{
@@ -13,10 +48,12 @@ font-size: 18px;
 }
 
 img {
+
 -webkit-transform: scale(0.4);
 }
 
 header img {
+
 -webkit-transform: scale(0.2);   
 }
 
@@ -28,10 +65,7 @@ background-color: #FFC107;
 padding-top: 2%;
 }
 
-.bouton-fusion {
-display: flex;
-justify-content: center;
-}
+
 .container1 {
     background-color: #FFC107;
     margin-bottom: -48px;

@@ -7,15 +7,13 @@ Personnages::LoadAllDDB();
 
 <section id="search-engine">
 
-<a href="index.php">
-<img src="https://upload.wikimedia.org/wikipedia/fr/f/f2/Dragon_Ball_Z_Logo.svg" alt="Logo de dragon ball z">
-</a>
+
 
 <form action="recherche.php" method="get" class="searchform">
    
 
     <div class="field">
-            <input type="text" name="search" class="searchbar" placeholder="Chercher un personnage" autocomplete="off">
+            <input type="text" name="search" class="searchbar" placeholder="Perso 2" autocomplete="off">
             <div class="suggestions">
                 <ul></ul>
             </div>

@@ -1,6 +1,7 @@
 </main>
 
 <footer>
-<p> By Mourad Boussiouf, github : mourad-boussiouf </p>
+<p id = "footergit"> https://github.com/mourad-boussiouf/autocompletion </p>
 </footer>
+
 </html>

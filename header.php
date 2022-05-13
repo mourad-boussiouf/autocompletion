@@ -20,22 +20,28 @@
 </head>
 <body>
 <header>
+    <div id = "logodiv">
     <a href="index.php">
-    <img src="https://upload.wikimedia.org/wikipedia/fr/f/f2/Dragon_Ball_Z_Logo.svg" alt="Logo de dragon ball z">
+    <img src="Dragon_Ball_Z_Logo.svg" alt="Logo de dragon ball z">
     </a>
+    </div>
     <h4> Search a dbz character !</h4>
+    <section id="search-engine">
     <form action="recherche.php" method="get" class="searchform">
 
        
 
         <div class="field">
-            <input type="text" name="search" class="searchbar" placeholder="Character's name" autocomplete="off">
+            <input type="text" name="search" class="searchbar" placeholder="Perso 1" autocomplete="off">
             <div class="suggestions">
                 <ul></ul>
             </div>
+
             <button type="button" class="btn reset-btn"></button>
         </div>
         <input type="submit" value="🔎🔎🔎" class="btn search-btn">
     </form>
+    
 </header>
+</section>
 <main>
