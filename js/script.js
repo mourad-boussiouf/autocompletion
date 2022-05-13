@@ -13,21 +13,40 @@ const searchSaiyan1 = async searchAll =>{
     
     const res = await fetch ('traitement.php');
     const persos = await res.json();
-
+    
+// Retourne tous les éléments de la bdd en adéquation avec l'expression régulière calqué sur les inputs des searchbar
     let matches = persos.filter(perso => {
-        const regex = new RegExp(`^${searchAll}` );
+        const regex = new RegExp(`^${searchAll}`, 'gi');
+        return perso.nom.match(regex);
     });
+
+    if (searchinputs1.value.length === 0) {
+    matches = [];
+    }
+
+    console.log(matches);
 };
+
 
  const searchSaiyan2 = async searchAll =>{
     
     const res = await fetch ('traitement.php');
     const persos = await res.json();
+    
+// Retourne tous les éléments de la bdd en adéquation avec l'expression régulière calqué sur les inputs des searchbar
+    let matches = persos.filter(perso => {
+        const regex = new RegExp(`^${searchAll}`, 'gi');
+        return perso.nom.match(regex);
+    });
 
-    console.log(persos);
+    if (searchinputs2.value.length === 0) {
+    matches = [];
+    }
+
+    console.log(matches);
 };  
 
-searchinputs1.addEventListener('keypress', () => searchSaiyan1(searchinputs1.value));
+searchinputs1.addEventListener('input', () => searchSaiyan1(searchinputs1.value));
 
 
 
