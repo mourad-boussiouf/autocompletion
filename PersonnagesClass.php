@@ -18,7 +18,7 @@ class Personnages {
 
     public static function searchLikeId($id) {
         $connexion = mysqli_connect("localhost", "root", "", "autocompletion");
-        $sql = mysqli_query($connexion, "SELECT * FROM pays WHERE id = $id");
+        $sql = mysqli_query($connexion, "SELECT * FROM personnages WHERE id = $id");
         $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
         
         file_put_contents('data.json', json_encode($result));
@@ -26,7 +26,7 @@ class Personnages {
 
     public static function searchLikeNom($nom) {
         $connexion = mysqli_connect("localhost", "root", "", "autocompletion");
-        $sql = mysqli_query($connexion, "SELECT * FROM pays WHERE nom LIKE '$nom%'");
+        $sql = mysqli_query($connexion, "SELECT * FROM personnages WHERE nom LIKE '$nom%'");
         $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
         
         file_put_contents('data.json', json_encode($result));

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 matchbox.className = 'matchbox';
 
                 let nom = document.createElement('h1');
-                nom.className = 'country-name';
+                nom.className = 'nom';
                 nom.innerHTML = result.nom;
 
 
