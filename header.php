@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="css/style.css">
     
     <!-- SCRIPTS -->
-    <script src="../scripts/script.js"></script>
-    <script src="../scripts/autocompletion.js"></script>
-    <script src="../scripts/element.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/autocompletion.js"></script>
+    <script src="js/scripts/element.js"></script>
 </head>
 <body>
 <header>
