@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 const searchinputs1 =  document.getElementById('searchbox1');
 const searchinputs2 = document.getElementById('searchbox2');
-const spancomplete1 = document.getElementById('search_result1');
-const spancomplete2 = document.getElementById('search_result2');
+const matchlist1 = document.getElementById('match-list1');
+const matchlist2 = document.getElementById('match-list2');
 
 
 // renvoi tous les persos de la bdd en json à chaque fois qu'une lettre est tapée dans l'un des deux champs
@@ -25,6 +25,7 @@ const searchSaiyan1 = async searchAll =>{
     }
 
     console.log(matches);
+    outputHTML1(matches);
 };
 
 
@@ -44,13 +45,34 @@ const searchSaiyan1 = async searchAll =>{
     }
 
     console.log(matches);
-    outputHTML(matches);
+    outputHTML2(matches);
 };  
 
 //Affiche les propositions en div html sous la barre de recherche
-const outputHTML = matches => {
+const outputHTML1 = matches => {
     if (matches.length > 0) {
-        
+    const html = matches.map(match => `
+    <div class = "card card-body mb-1">
+        <h4><span class = "text-primary">${match.nom}</span></h4>
+    </div>
+    `
+    )
+    .join('');
+
+    matchlist1.innerHTML = html;
+    }
+}
+const outputHTML2 = matches => {
+    if (matches.length > 0) {
+    const html = matches.map(match => `
+    <div class = "card card-body mb-1">
+        <h4><span class = "text-primary">${match.nom}</span></h4>
+    </div>
+    `
+    )
+    .join('');
+
+    matchlist2.innerHTML = html;
     }
 }
 
