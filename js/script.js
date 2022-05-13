@@ -44,7 +44,15 @@ const searchSaiyan1 = async searchAll =>{
     }
 
     console.log(matches);
+    outputHTML(matches);
 };  
+
+//Affiche les propositions en div html sous la barre de recherche
+const outputHTML = matches => {
+    if (matches.length > 0) {
+        
+    }
+}
 
 searchinputs1.addEventListener('input', () => searchSaiyan1(searchinputs1.value));
 

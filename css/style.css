@@ -1,15 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+header {
+background-color: #FFC107;
+text-align: center;
+}
+
+header img {
+-webkit-transform: scale(0.4);
+}
 
 
 html {
-background-color: orange;
+    margin: 0;
+    padding: 0;
+background-color: #FFC107;
 padding-top: 2%;
 }
 
+.bouton-fusion {
+display: flex;
+justify-content: center;
+}
 .container1 {
-    background-color: orangered;
+    background-color: #FFC107;
     margin-bottom: -48px;
 }
 
 .container2 {
-    background-color: orangered;
+    background-color: #FFC107;
+    height: 280px;
 }
