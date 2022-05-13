@@ -22,6 +22,7 @@ const searchSaiyan1 = async searchAll =>{
 
     if (searchinputs1.value.length === 0) {
     matches = [];
+    matchlist1.innerHTML = '';
     }
 
     console.log(matches);
@@ -42,6 +43,7 @@ const searchSaiyan1 = async searchAll =>{
 
     if (searchinputs2.value.length === 0) {
     matches = [];
+    matchlist2.innerHTML = '';
     }
 
     console.log(matches);

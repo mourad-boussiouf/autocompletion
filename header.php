@@ -1,30 +1,15 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<title>Dbz</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/style.css">
-	<script src="js/script.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-</head>
-<div class="p-3 mb-2 bg-warning text-dark">
-<body>
-	<header>
-		<img src="https://upload.wikimedia.org/wikipedia/fr/f/f2/Dragon_Ball_Z_Logo.svg" alt="Logo de dragon ball z">
+<img src="https://upload.wikimedia.org/wikipedia/fr/f/f2/Dragon_Ball_Z_Logo.svg" alt="Logo de dragon ball z">
 		<h1> FUSION GENERATOR!</h1>
-	</header>
 
-
-    <div class="container1">
+        <div class="container1">
     	<h2 class="text-center mb-4">Faire fusionner :</h2>
     	<div class="row mt-5 mb-5">
     		<div class="col col-sm-2">&nbsp;</div>
     		<div class="col col-sm-8">
     			<div class="dropdown">
-					<form method="POST" action="">
+					<form>
     				<input type="text" name="searchbox1" id = 'searchbox1' class="form-control form-control-lg" placeholder="Type Here..." id="search_box" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  />
+                    <input type="submit" name="searchrun1" id = 'searchrun1' class="form-control form-control-lg" placeholder="Type Here..." id="search_box" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  />
 					</form>
     				<div id="match-list1"></div>
     			</div>
@@ -44,11 +29,3 @@
     		</div>
     	</div>    	
     </div>
-
-<div class="bouton-fusion">
-	<button> FUSION!</button>
-</div>
-
-</div>
-</body>
-</html>
