@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const rechercheUser = field.getElementsByClassName('searchbar').item(0);
         const matches = field.querySelector('.suggestions ul');
-        const Exactmatches = field.querySelector('.suggestionsExactes ul');
+        const exactMatches = field.querySelector('.suggestionsExactes ul');
 
     
         let allData = [];
@@ -35,8 +35,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 return results;
             }
 
+            //FONCTION QUI AFFICHE LES RESULTATS EXACTES EGAUX
+            function displayExactMatches(results, inputVal) {
+                
+                exactMatches.innerHTML = '';
+            
+                if (results.length > 0) {
+                    for (i = 0; i < results.length; i++) {
+                        let item = results[i];
+                        const exactMatch = item.match(new RegExp(`^${inputVal}`, 'gi'));
+                        item = item.replace(exactMatch[0], `<strong>${exactMatch[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
+                        exactMatches.innerHTML += `<li>${item}</li>`;
+                    }
+                    exactMatches.classList.add('has-suggestions');
+                } else {
+                    results = [];
+                    exactMatches.innerHTML = '';
+                    exactMatches.classList.remove('has-suggestions');
+                }
+            }
 
-
+            //FONCTION QUI AFFICHE LES RESULTATS SIMILAIRES LIKES
             function displayMatches(results, inputVal) {
                 
                 matches.innerHTML = '';
@@ -48,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         item = item.replace(match[0], `<strong>${match[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
                         matches.innerHTML += `<li>${item}</li>`;
 
-                        const exactMatch = item.match (new RegExp(`^${inputVal}`, 'gi'));
+                        
                     }
                     matches.classList.add('has-suggestions');
                 } else {
@@ -65,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     results = search(inputVal);
                 }
                 displayMatches(results, inputVal);
+                displayExactMatches(results, inputVal)
             }
 
             function useSuggestion(e) {
