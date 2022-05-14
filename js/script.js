@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const rechercheUser = field.getElementsByClassName('searchbar').item(0);
         const matches = field.querySelector('.suggestions ul');
+        const Exactmatches = field.querySelector('.suggestionsExactes ul');
+
     
         let allData = [];
 
@@ -45,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         const match = item.match(new RegExp(inputVal, 'i'));
                         item = item.replace(match[0], `<strong>${match[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
                         matches.innerHTML += `<li>${item}</li>`;
+
+                        const exactMatch = item.match (new RegExp(`^${inputVal}`, 'gi'));
                     }
                     matches.classList.add('has-suggestions');
                 } else {

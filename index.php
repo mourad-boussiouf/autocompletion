@@ -17,6 +17,9 @@ Personnages::LoadAllDDB();
             <div class="suggestions">
                 <ul></ul>
             </div>
+			<div class="suggestionsExactes">
+                <ul></ul>
+            </div>
         <button type="button" class="btn reset-btn"> </button>
     </div>
     
