@@ -7,9 +7,11 @@ header {
 background-color: #FFC107;
 }
 
-button {
+.card {
 
+background-color: rgb(140, 255, 0);
 }
+
 
 li:active{
 background-color: rgb(255, 255, 0);

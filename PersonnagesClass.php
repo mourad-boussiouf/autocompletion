@@ -30,16 +30,18 @@ class Personnages {
         $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
         
         file_put_contents('data.json', json_encode($result));
-        
+
         return $result;
     }
 
     public static function searchLikeNom($nom) {
         $connexion = mysqli_connect("localhost", "root", "", "autocompletion");
-        $sql = mysqli_query($connexion, "SELECT * FROM personnages WHERE nom LIKE '$nom%'");
+        $sql = mysqli_query($connexion, "SELECT * FROM personnages WHERE nom LIKE '%$nom%'");
         $result = mysqli_fetch_all($sql, MYSQLI_ASSOC);
+
+        file_put_contents('search.json', json_encode($result));
+
         
-        file_put_contents('data.json', json_encode($result));
     }
 
 }

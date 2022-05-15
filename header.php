@@ -14,9 +14,7 @@
     <link rel="stylesheet" href="css/style.css">
     
     <!-- SCRIPTS -->
-    <script src="js/script.js"></script>
-    <script src="js/inputcomplete.js"></script>
-    <script src="js/scripts/element.js"></script>
+
 </head>
 <body>
 <header>
@@ -44,6 +42,10 @@
         <input type="submit" value="🔎🔎🔎" class="btn search-btn">
     </form>
     
+    <script src="js/urlchecker.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/inputcomplete.js"></script>
+
 </header>
 </section>
 <main>
