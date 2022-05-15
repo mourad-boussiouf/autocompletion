@@ -2,6 +2,10 @@
 include_once "header.php";
 include_once "PersonnagesClass.php";
 
+define('path', '/autocompletion/');
+// Ceci est à la fois un autoloader, un rooter, le composer (ça veut rien dire) un websocket, ainsi qu'une machine à café.
+define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
+
 Personnages::LoadAllDDB();
 ?>
 

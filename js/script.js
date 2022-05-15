@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let allData = [];
 
 
-        fetch('ddb.json')
+        fetch('/autocompletion/ddb.json')
         .then((res) => res.json())
         .then(function(data) {
             data.forEach(function(item) {

@@ -7,6 +7,17 @@ header {
 background-color: #FFC107;
 }
 
+header a {
+    background-color: #FFC107;
+
+    }
+
+header img {
+
+-webkit-transform: scale(0.2);   
+}
+        
+
 .card {
 
 background-color: rgb(140, 255, 0);
@@ -61,10 +72,6 @@ img {
 -webkit-transform: scale(0.4);
 }
 
-header img {
-
--webkit-transform: scale(0.2);   
-}
 
 
 html {
