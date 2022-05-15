@@ -8,8 +8,16 @@ background-color: #FFC107;
 }
 
 button {
-display: none;
+
 }
+
+li:active{
+background-color: rgb(255, 255, 0);
+}
+li:hover{
+background-color: rgb(255, 89, 29);
+}
+
 
 #footergit
 {

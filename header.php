@@ -15,7 +15,7 @@
     
     <!-- SCRIPTS -->
     <script src="js/script.js"></script>
-    <script src="js/autocompletion.js"></script>
+    <script src="js/inputcomplete.js"></script>
     <script src="js/scripts/element.js"></script>
 </head>
 <body>
@@ -33,10 +33,12 @@
 
         <div class="field">
             <input type="text" name="search" class="searchbar" placeholder="Perso 1" autocomplete="off">
+            <div class="suggestionsExactes">
+                <ul></ul>
+            </div>
             <div class="suggestions">
                 <ul></ul>
             </div>
-
             <button type="button" class="btn reset-btn"></button>
         </div>
         <input type="submit" value="🔎🔎🔎" class="btn search-btn">

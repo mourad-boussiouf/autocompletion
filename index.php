@@ -14,10 +14,10 @@ Personnages::LoadAllDDB();
 
     <div class="field">
             <input type="text" name="search" class="searchbar" placeholder="Perso 2" autocomplete="off">
-            <div class="suggestions">
+			<div class="suggestionsExactes">
                 <ul></ul>
             </div>
-			<div class="suggestionsExactes">
+            <div class="suggestions">
                 <ul></ul>
             </div>
         <button type="button" class="btn reset-btn"> </button>

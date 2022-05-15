@@ -14,10 +14,10 @@ Personnages::searchLikeNom($_GET["search"]);
 if (strlen(file_get_contents("data.json")) > 3) 
 {
 
-echo "<h1>".$_GET["search"]."</h1>";
+echo "<h1>".$result."</h1>";
 
 } else {
-echo "404 not found";
+echo "<h1>404 not found</h1>";
 }
    
 ?>
