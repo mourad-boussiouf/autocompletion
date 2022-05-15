@@ -8,12 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Si l'url de la page contient "element", afficher une page inidividuelle du perso :
     if(window.location.href.includes('element')) {
-    
-        fetch('data.json')
-        .then((res) => res.json())
-        .then(function(data) {
-
-            data.forEach(function(result) {
+        
+        
+            
 
                 
                 let matchbox = document.createElement('div');
@@ -27,13 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 matchbox.append(nom);
 
             resultDiv.append(matchbox);
-        });
-    })
-    .catch(function(error) { 
-        console.log(error);
-    });
+    
+    }
 
-}
+
+
 
 
 if(window.location.href.includes('search')) {

@@ -1,8 +1,4 @@
 
-
-
-     
-	
         <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +11,10 @@
     
     <!-- SCRIPTS -->
 
+    <script src="js/urlchecker.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/inputcomplete.js"></script>
+
 </head>
 <body>
 <header>
@@ -25,7 +25,7 @@
     </div>
     <h4> Search a dbz character !</h4>
     <section id="search-engine">
-    <form action="recherche.php" method="get" class="searchform">
+    <form action="/autocompletion/recherche.php" method="get" class="searchform">
 
        
 
@@ -42,9 +42,6 @@
         <input type="submit" value="🔎🔎🔎" class="btn search-btn">
     </form>
     
-    <script src="js/urlchecker.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/inputcomplete.js"></script>
 
 </header>
 </section>
