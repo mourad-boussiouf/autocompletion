@@ -5,7 +5,7 @@ include_once "PersonnagesClass.php";
 ?>
 <h2></h2>
 
-<section id="results">
+<section id="outputPart">
 
 <?php 
 

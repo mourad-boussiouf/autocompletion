@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     //Selectionne l'element balise html ayant l'id result
-    const resultDiv = document.querySelector('#result');
+    const resultDiv = document.querySelector('#outputPart');
     const title = document.querySelector('h2');
+    const resultDivElement = document.querySelector('#outputPart2');
     
      
 
@@ -29,8 +30,18 @@ document.addEventListener('DOMContentLoaded', function() {
             });
           }
 
-          displayMatches(title);
+          
+// en JS on adore multiplier les documents inutiles et autres poupées russes de append interminables ^^
+          let uni = document.createElement('div');
+          uni.className = 'uni';
+          
+          let uniuni = document.createElement('div');
+          uniuni.className = 'uniuni';
+          uniuni.innerHTML = '<img src="/autocompletion/dragonball.png" alt="une dragon ball">';
         
+          uni.append(uniuni);
+          resultDivElement.append(uni);
+
             
     }
 
