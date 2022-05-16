@@ -10,14 +10,11 @@
 include "header.php";
 include_once "PersonnagesClass.php";
 
-define('path', '/autocompletion/');
 // Ceci est à la fois un autoloader, un rooter, le composer (ça veut rien dire) un websocket, ainsi qu'une machine à café.
-define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
 
 Personnages::LoadAllDDB();
 ?>
 <?php 
-
 
 class Element {
 public static function searchExactNom($nom) {
@@ -36,12 +33,9 @@ $insert = '[{"id":"'.$perso[0]['id'].'","nom":"'.$perso[0]['nom'].'"}]';
 
 <section id="results">
 
-<h2><?=$perso[0]['id'] ?></h2>
-<?php 
 
-echo $perso[0]['id'];
-echo $perso[0]['nom'];
-?>
+<h2><?=$perso[0]['id'] ?></h3>
+<h2><?=$perso[0]['nom'] ?></h2>
 
 </section>
 

@@ -8,23 +8,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //Si l'url de la page contient "element", afficher une page inidividuelle du perso :
     if(window.location.href.includes('element')) {
-        
+
+        function animate(options) {
+
+            var start = performance.now();
+          
+            requestAnimationFrame(function animate(time) {
+              
+              var timeFraction = (time - start) / options.duration;
+              if (timeFraction > 1) timeFraction = 1;
+          
+              var progress = options.timing(timeFraction)
+              
+              options.draw(progress);
+          
+              if (timeFraction < 1) {
+                requestAnimationFrame(animate);
+              }
+          
+            });
+          }
+
+          displayMatches(title);
         
             
-
-                
-                let matchbox = document.createElement('div');
-                matchbox.className = 'matchbox';
-
-                let nom = document.createElement('h1');
-                nom.className = 'nom';
-                nom.innerHTML = result.nom;
-
-
-                matchbox.append(nom);
-
-            resultDiv.append(matchbox);
-    
     }
 
 
