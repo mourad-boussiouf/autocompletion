@@ -33,9 +33,10 @@ $insert = '[{"id":"'.$perso[0]['id'].'","nom":"'.$perso[0]['nom'].'"}]';
 
 <section id="results">
 
-
+<p id = elementinfos>
 <h2><?=$perso[0]['id'] ?></h3>
 <h2><?=$perso[0]['nom'] ?></h2>
+</p>
 
 </section>
 
