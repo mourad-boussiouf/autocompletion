@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultDiv = document.querySelector('#outputPart');
     const title = document.querySelector('h2');
     const resultDivElement = document.querySelector('#outputPart2');
+
     
      
 
@@ -41,6 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
           uni.append(uniuni);
           resultDivElement.append(uni);
+          //paramètre de style css ajouté dynamiquement à la box dédié à l'élément
+          resultDivElement.style.display = 'flex';
+          resultDivElement.style.flexDirection = 'column';
+          resultDivElement.style.justifyContent = 'center';
+          resultDivElement.style.alignItems = 'center';
+
 
             
     }
@@ -73,7 +80,7 @@ if(window.location.href.includes('search')) {
 
             card.append(personnages);
 
-            resultsDiv.append(card);
+            resultDiv.append(card);
 
 
             card.addEventListener('click', function() {
