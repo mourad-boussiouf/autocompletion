@@ -12,7 +12,7 @@ Personnages::LoadAllDDB();
 
 
 
-<form action="recherche.php" method="get" class="searchform">
+<form id = 'formidex' action="recherche.php" method="get" class="searchform">
    
 
     <div class="field">

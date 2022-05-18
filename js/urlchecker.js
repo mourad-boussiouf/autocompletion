@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const title = document.querySelector('h2');
     const title2 = document.querySelector('h3');
     const resultDivElement = document.querySelector('#outputPart2');
-    const matches = field.querySelector('.suggestions ul');
-    const exactMatches = field.querySelector('.suggestionsExactes');
 
     
      
