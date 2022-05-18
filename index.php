@@ -8,26 +8,29 @@ define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
 Personnages::LoadAllDDB();
 ?>
 <script src="js/indexPage.js"></script>
+<script src="js/inputcomplete.js"></script>
 
 <section id="search-engine">
 
 
 
-<form id = 'formidex' action="recherche.php" method="get" class="searchform">
+<form id = 'formidex' action="recherche.php"  class="Indexsearchbar" method="get" class="searchform">
    
 
-    <div class="field">
-            <input type="text" name="search" class="searchbar" placeholder="Perso 2" autocomplete="off">
+    <div class="field" class = indexsearch>
+            <input type="text" name="search" class="searchbar" class="Indexsearchbar2" placeholder="Perso 2" autocomplete="off">
 			<div class="suggestionsExactes">
                 <ul></ul>
             </div>
-            <div class="suggestions">
+            <div class="suggestions" id = "suggid2">
                 <ul></ul>
             </div>
-        <button type="button" class="btn reset-btn"> </button>
+
+        
     </div>
     
-    <input type="submit" value="🔎🔎🔎" class="btn search-btn">
+    <input type = "submit" value="🔎🔎" class="btn search-btn">
+    
 </form>
 <h1 class="err-msg"></h1>
 

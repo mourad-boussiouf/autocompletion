@@ -11,10 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const matches = field.querySelector('.suggestions ul');
         const exactMatches = field.querySelector('.suggestionsExactes ul');
 
-    
         
-
-    
         let allData = [];
 
 
@@ -39,6 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             
                 return results;
+            }
+
+            function replaceWithSuggs(results, inputVal) {
+                rechercheUser.addEventListener('keyup', searchHandler);
             }
 
             //FONCTION QUI AFFICHE LES RESULTATS EXACTES EGAUX
@@ -72,10 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         let item = results[i];
                         const match = item.match(new RegExp(inputVal, 'i'));
                         item = item.replace(match[0], `<strong>${match[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
-                        matches.innerHTML += `<li>${item}  ❓</li>`;
+                        matches.innerHTML += `<li><a href="/autocompletion/element.php/?id=${results[i]}">${item}</a>  ❓</li>`;
 
                         
                     }
+
+
+   
+
+
                     matches.classList.add('has-suggestions');
                 } else {
                     results = [];
@@ -100,8 +106,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 matches.innerHTML = '';
                 matches.classList.remove('has-suggestions');
             }
-            
-            rechercheUser.addEventListener('keyup', searchHandler);
+
+
+            rechercheUser.addEventListener('keydown', replaceWithSuggs);
             matches.addEventListener('click', useSuggestion);
             
 

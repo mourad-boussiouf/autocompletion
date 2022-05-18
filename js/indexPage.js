@@ -2,19 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const indexFormSearch = document.getElementById('formidex');
 
-const indexInputText = querySelector('input[type=text]');
+const leslistes = document.querySelector('.has-suggestions');
 
-
-mainCss.style.backgroundColor = 'black';
-
-indexFormSearch.style.fontSize = '50px';
-
-
-indexInputText.style.fontSize = '200%;';
-
-
-
-
+const suggs = document.getElementById('suggid');
 
 
 });

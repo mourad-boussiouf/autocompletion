@@ -5,6 +5,7 @@ padding: 0;
 
 header {
 background-color: #FFC107;
+height: 25%;
 }
 
 header a {
@@ -14,9 +15,13 @@ header a {
 
 header img {
 
--webkit-transform: scale(0.2);   
+-webkit-transform: scale(0.2); 
+height: 266px;  
 }
-        
+  
+.outputPart2 {
+margin-top: 200px;
+}
 #elementinfos {
 display: flex;
 justify-content: center;
@@ -71,7 +76,55 @@ display: flex;
 justify-content: center;
 }
 
+.Indexsearchbar {
+display: flex;
+justify-content: center;
+        padding: 8px;
+        font-size: 17px;
+        border: none;
+        float: right;
+        width: 45%;
+        background: rgba(255, 111, 0, 0.77);
+        border-radius: 33px;
 
+}
+
+.Indexsearchbar input[type=submit] {
+float: right;
+border-radius: 45%;
+width: 15%;
+align-items: center;
+height: 60px;
+margin-top: 38px;
+}
+
+.Indexsearchbar input[type=submit]:hover {
+background-color: red;
+    }
+
+.Indexsearchbar input[type="text" i] {
+font-size: 20px;
+margin-top: 51px;
+}
+
+.Indexsearchbar2 input[type=text] { 
+margin-top: 50px;
+width: 55%;
+}
+
+.indexsearch {
+height: 400px;
+font-size: 40px;
+color: navy;
+}
+    
+
+
+button {
+margin-bottom: 40px;
+width: 30px;
+height: 20px;
+}
 footer {
     position:absolute;
     bottom:0;

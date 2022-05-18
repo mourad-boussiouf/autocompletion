@@ -38,9 +38,9 @@
             <div class="suggestions">
                 <ul></ul>
             </div>
-            <button type="button" class="btn reset-btn"></button>
+            
         </div>
-        <input type="submit" value="🔎🔎🔎" class="btn search-btn">
+        <input type="submit" value="🔎" class="btn search-btn">
     </form>
     
 
