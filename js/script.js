@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const exactMatch = item.match(new RegExp(`^${inputVal}`, 'gi'));
                         exactMatches.style.borderBottom = '2px dotted black';
                         item = item.replace(exactMatch[0], `<strong>${exactMatch[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
-                        exactMatches.innerHTML += `<li><a href="/autocompletion/element.php/?id=${results[i]}">${item}</a>←</li>`;
+                        exactMatches.innerHTML += `<li><a href="/autocompletion/element.php/?id=${results[i]}">${item}</a>  ✅</li>`;
                     }
                     exactMatches.classList.add('has-suggestions');
                 } else {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         let item = results[i];
                         const match = item.match(new RegExp(inputVal, 'i'));
                         item = item.replace(match[0], `<strong>${match[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
-                        matches.innerHTML += `<li>${item}</li>`;
+                        matches.innerHTML += `<li>${item}  ❓</li>`;
 
                         
                     }
