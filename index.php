@@ -7,6 +7,7 @@ define('ROOT', str_replace('index.php', '', $_SERVER['SCRIPT_FILENAME']));
 
 Personnages::LoadAllDDB();
 ?>
+<script src="js/indexPage.js"></script>
 
 <section id="search-engine">
 

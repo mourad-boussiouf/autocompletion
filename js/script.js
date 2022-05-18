@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     for (i = 0; i < results.length; i++) {
                         let item = results[i];
                         const exactMatch = item.match(new RegExp(`^${inputVal}`, 'gi'));
-                        exactMatches.style.borderBottom = 'solid';
+                        exactMatches.style.borderBottom = '2px dotted black';
                         item = item.replace(exactMatch[0], `<strong>${exactMatch[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
-                        exactMatches.innerHTML += `<li><a href="/autocompletion/element.php/?id=${results[i]}">${item}</a></li>`;
+                        exactMatches.innerHTML += `<li><a href="/autocompletion/element.php/?id=${results[i]}">${item}</a>←</li>`;
                     }
                     exactMatches.classList.add('has-suggestions');
                 } else {
