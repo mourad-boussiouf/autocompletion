@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     //Selectionne l'element balise html ayant l'id result
     const resultDiv = document.querySelector('#outputPart');
     const title = document.querySelector('h2');
+    const title2 = document.querySelector('h3');
     const resultDivElement = document.querySelector('#outputPart2');
+    const matches = field.querySelector('.suggestions ul');
+    const exactMatches = field.querySelector('.suggestionsExactes');
 
     
      
@@ -47,6 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
           resultDivElement.style.flexDirection = 'column';
           resultDivElement.style.justifyContent = 'center';
           resultDivElement.style.alignItems = 'center';
+          resultDivElement.style.fontFamily = 'monospace';
+          title.style.fontSize = '28px';
+          title2.style.fontSize = '21px';
+          
 
 
             
