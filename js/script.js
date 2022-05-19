@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let fields = Array.from(document.getElementsByClassName('field'));
     let headerSearchField = document.getElementById('headersearch');
-
+    
     
 
     fields.forEach(field => {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             function displayExactMatches(results, inputVal) {
                 
                 exactMatches.innerHTML = '';
-            
+                let count = -1;
                 if (results.length > 0) {
                     for (i = 0; i < results.length; i++) {
                         let item = results[i];
@@ -59,12 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         exactMatches.innerHTML += `<li><a href="/autocompletion/element.php/?id=${results[i]}">${item}</a>  ✅</li>`;
                     }
 
-                    let count = 0;
+                    
 
                     headerSearchField.addEventListener('keydown', function(e) {
                         switch (e.keyCode) {
                             case 40:
-                                alert('down');
+                                count++
+                                headerSearchField.value = results[count];
                                 
                                 break;
                         }
