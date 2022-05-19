@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let fields = Array.from(document.getElementsByClassName('field'));
     let headerSearchField = document.getElementById('headersearch');
-    
+    let downarrowed = false;
     
 
     fields.forEach(field => {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 exactMatches.innerHTML = '';
                 let count = -1;
-                if (results.length > 0) {
+                if (results.length > 0 && downarrowed === false) {
                     for (i = 0; i < results.length; i++) {
                         let item = results[i];
                         const exactMatch = item.match(new RegExp(`^${inputVal}`, 'gi'));
@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     headerSearchField.addEventListener('keydown', function(e) {
                         switch (e.keyCode) {
                             case 40:
+                                downarrowed = true;
                                 count++
                                 headerSearchField.value = results[count];
                                 
