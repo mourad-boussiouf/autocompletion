@@ -5,6 +5,7 @@
 <script src="js/urlchecker.js"></script>
     <script src="js/script.js"></script>
     <script src="js/inputcomplete.js"></script>
+    <script src="js/keydown.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +32,7 @@
        
 
         <div class="field">
-            <input type="text" name="search" class="searchbar" placeholder="Perso 1" autocomplete="off">
+            <input type="text" name="search" class="searchbar" id = "headersearch" placeholder="Perso 1" autocomplete="off">
             <div class="suggestionsExactes">
                 <ul></ul>
             </div>

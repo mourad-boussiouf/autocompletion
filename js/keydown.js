@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    let fields = Array.from(document.getElementsByClassName('field'));
-    let headerSearchField = document.getElementById('headersearch');
+    let champs = Array.from(document.getElementsByClassName('field'));
 
     
 
-    fields.forEach(field => {
+    champs.forEach(field => {
         
-        const rechercheUser = field.getElementsByClassName('searchbar').item(0);
+        const TRUCAREMPLACER = field.getElementsByClassName('searchbar').item(0);
         
-        const matches = field.querySelector('.suggestions ul');
-        const exactMatches = field.querySelector('.suggestionsExactes ul');
+        const BOXEXACT = field.querySelector('.suggestions ul');
+        const BOX = field.querySelector('.suggestionsExactes ul');
 
 
         let allData = [];
@@ -41,9 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             
 
-            function replaceWithSuggs(results, inputVal) {
-                rechercheUser.addEventListener('keyup', searchHandler);
-            }
 
             //FONCTION QUI AFFICHE LES RESULTATS AVEC STRING EXACTE DANS L'ORDRE.
             function displayExactMatches(results, inputVal) {
@@ -53,30 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (results.length > 0) {
                     for (i = 0; i < results.length; i++) {
                         let item = results[i];
-                        const exactMatch = item.match(new RegExp(`^${inputVal}`, 'gi'));
-                        exactMatches.style.borderBottom = '2px dotted black';
-                        item = item.replace(exactMatch[0], `<strong>${exactMatch[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
-                        exactMatches.innerHTML += `<li><a href="/autocompletion/element.php/?id=${results[i]}">${item}</a>  ✅</li>`;
+                        const listOfResults = item.match(new RegExp(`^${inputVal}`, 'gi'));
+                       
                     }
-
-                    let count = 0;
-
-                    headerSearchField.addEventListener('keydown', function(e) {
-                        switch (e.keyCode) {
-                            case 40:
-                                alert('down');
-                                
-                                break;
-                        }
-                    });
-
-                    
-
-                    exactMatches.classList.add('has-suggestions');
+                    //exactMatches.classList.add('has-suggestions');
                 } else {
-                    results = [];
-                    exactMatches.innerHTML = '';
-                    exactMatches.classList.remove('has-suggestions');
+                    //results = [];
+                    //exactMatches.innerHTML = '';
+                    //exactMatches.classList.remove('has-suggestions');
                 }
             }
 
@@ -125,8 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
 
-            rechercheUser.addEventListener('keydown', replaceWithSuggs);
-            matches.addEventListener('click', useSuggestion);
+
+
             
 
     })

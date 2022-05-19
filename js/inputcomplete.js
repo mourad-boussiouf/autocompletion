@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     fields.forEach(function(field) {
         
     
-        var input = field.getElementsByTagName('input').item(0);
-        var resetBtn = field.getElementsByClassName('reset-btn').item(0);
-        var searchBtn = field.getElementsByClassName('search-btn').item(0);
+        const input = field.getElementsByTagName('input').item(0);
+        const resetBtn = field.getElementsByClassName('reset-btn').item(0);
+        const searchBtn = field.getElementsByClassName('search-btn').item(0);
     
         if(searchValue != "") {
             searchBtn.addEventListener('click', function() {
