@@ -50,24 +50,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 exactMatches.innerHTML = '';
                 let count = -1;
-                if (results.length > 0 && downarrowed === false) {
+                if (results.length > 0 ) {
                     for (i = 0; i < results.length; i++) {
                         let item = results[i];
                         const exactMatch = item.match(new RegExp(`^${inputVal}`, 'gi'));
                         exactMatches.style.borderBottom = '2px dotted black';
                         item = item.replace(exactMatch[0], `<strong>${exactMatch[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
-                        exactMatches.innerHTML += `<li><a href="/autocompletion/element.php/?id=${results[i]}">${item}</a>  ✅</li>`;
+                        exactMatches.innerHTML += `<li><span><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a>  ✅</li>`;
+//welley jespere le scope du var est bon
+                        var liNodeList = document.querySelectorAll("span");
                     }
-
+                    
                     
 
                     headerSearchField.addEventListener('keydown', function(e) {
                         switch (e.keyCode) {
                             case 40:
-                                downarrowed = true;
+/*                                 downarrowed = true;
                                 count++
-                                headerSearchField.value = results[count];
-                                
+                                headerSearchField.value = results[count]; */
+                                var washedLi = liNodeList[0].innerHTML.replace(`<a href="/autocompletion/element.php/?id=`,``);
+                                var bleachedLi = washedLi.replace(`"></a>`,``);
+
+                                console.log(bleachedLi);
                                 break;
                         }
                     });
@@ -115,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (inputVal.length > 0) {
                     results = search(inputVal);
                 }
+
                 displayMatches(results, inputVal);
                 displayExactMatches(results, inputVal)
             }
