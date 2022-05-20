@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let downarrowed = false;
     
     
+    
 
     fields.forEach(field => {
         
@@ -58,9 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         exactMatches.style.borderBottom = '2px dotted black';
                         // les lettres qui matches avec l'input sont en strong
                         item = item.replace(exactMatch[0], `<strong>${exactMatch[0]}</strong>`); 
-                        exactMatches.innerHTML += `<span><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a>  ✅</li>`;
+                        exactMatches.innerHTML += `<span><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a></li>`;
 //welley jespere le scope du var est bon 
                     }
+                    
                     //zebi c'était pas trop bon
                     
 
@@ -85,36 +87,36 @@ document.addEventListener('DOMContentLoaded', () => {
                         let item = results[i];
                         const match = item.match(new RegExp(inputVal, 'i'));
                         item = item.replace(match[0], `<strong>${match[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
-                        matches.innerHTML += `<span><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a>  ❓</li>`;
+                        matches.innerHTML += `<span><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a></li>`;
 //welley jespere le scope du var est bon 
                         }
 
 
-                        var liNodeList = Array.from(document.querySelectorAll("span"));
+                        let liNodeList = Array.from(document.querySelectorAll("span"));
                         
                         
-                    
-
 
 
                     headerSearchField.addEventListener('keydown', function(e) {
                         switch (e.keyCode) {
                             case 40:
-                                console.log(liNodeList.length);
-                                var washedLi = [];
+                                downarrowed = true;
+
                                 var bleachedLi = [];
                                 
-                                 for (h = 0; h < liNodeList.length; h++) {
-/*                                  
-
-                                    washedLi[a] = liNodeList[a].replace(`<a href="/autocompletion/element.php/?id=`,``);
-                                    bleachedLi[a] =  liWashed[a].replace(`"></a>`,``); */
+                                for (h = 0; h < liNodeList.length; h++) {
+                                
+                                    bleachedLi.push(liNodeList[h].innerText);
+ 
 
                                 } 
-/*                                 downarrowed = true;
-                                count++
-                                headerSearchField.value = results[count]; */
 
+                                console.log(bleachedLi);
+
+                                
+                                
+                                //headerSearchField.value = bleachedLi[0];  
+ 
                                 
 
                                 break;
@@ -131,17 +133,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     matches.classList.remove('has-suggestions');
                 }
             }
+           
+                
+            
+                function searchHandler(e) {
+                    if (downarrowed == false) {
+                        
+                    
+                        const inputVal = e.currentTarget.value;
+                        let results = [];
+                        if (inputVal.length > 0) {
+                            results = search(inputVal);
+                        }
 
-            function searchHandler(e) {
-                const inputVal = e.currentTarget.value;
-                let results = [];
-                if (inputVal.length > 0) {
-                    results = search(inputVal);
+                        displayMatches(results, inputVal);
+                        displayExactMatches(results, inputVal)
+
+                }
                 }
 
-                displayMatches(results, inputVal);
-                displayExactMatches(results, inputVal)
-            }
+            
 
             function useSuggestion(e) {
                 input.value = e.target.innerText;
