@@ -137,15 +137,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
                                 if (countbar >= bleachedLi.length - 1) {
                                 countbar = -1;
-                                AllList[countbar+1].style.backgroundColor = 'white';
-                                AllList[bleachedLi.length - 1].style.backgroundColor = 'red';
+                                AllList[bleachedLi.length - 1].style.background = 'red';
+                                AllList[countbar+1].style.background = 'rgb(255,0,0)';
+                                AllList[countbar+1].style.background = 'linear-gradient(90deg, rgba(255,0,0,1) 49%, rgba(255,255,255,1) 87%)';
+
                                 }
                                 countbar++;
                                 console.log(countbar);
 
                                 headerSearchField.value = bleachedLi[countbar]; 
-                                AllList[countbar-1].style.backgroundColor = 'red';
-                                AllList[countbar].style.backgroundColor = 'white';
+                                if (countbar === 0) {
+                                    AllList[0].style.background = 'rgb(255,0,0)';
+                                    AllList[countbar].style.background = 'linear-gradient(90deg, rgba(255,0,0,1) 49%, rgba(255,255,255,1) 87%)';
+                                }
+                                AllList[countbar-1].style.background = 'red';
+                                AllList[countbar].style.background = 'rgb(255,0,0)';
+                                AllList[countbar].style.background = 'linear-gradient(90deg, rgba(255,0,0,1) 49%, rgba(255,255,255,1) 87%)';
+
  
                                 
 
