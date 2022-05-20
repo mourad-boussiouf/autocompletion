@@ -74,15 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         item = item.replace(exactMatch[0], `<strong>${exactMatch[0]}</strong>`); 
                         exactMatches.innerHTML += `<span id = "nodelist1"><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a></li>`;
                         count1++
+
+                       
 //welley jespere le scope du var est bon 
                     }
                     
                     //zebi c'était pas trop bon
                     
-                    articleNodeList = Array.from(document.querySelectorAll("#nodelist1"));
-
-                    
-
                     exactMatches.classList.add('has-suggestions');
                 } else {
                     count1 = 0;
@@ -96,7 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
             function displayMatches(results, inputVal) {
                 
                 matches.innerHTML = '';
-            
+                
+
                 if (results.length > 0) {
                     for (i = 0; i < results.length; i++) {
                         let item = results[i];
@@ -108,7 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
 
                         const spanNodeList = Array.from(document.querySelectorAll("#nodelist2"));
-                        
+                        const articleNodeList = Array.from(document.querySelectorAll("#nodelist1"));
+                       
                         
 
 
@@ -121,7 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 downarrowed = false;
                                 break;
                             case 40:
+
                                 downarrowed = true;
+
+                                var AllList = Array.from(document.querySelectorAll("li"));
 
                                 var bleachedLi = [];
                                 
@@ -131,8 +134,15 @@ document.addEventListener('DOMContentLoaded', () => {
  
 
                                 } 
+
+                                for (h = 0; h < articleNodeList.length; h++) {
                                 
-                                console.log(spanNodeList);
+                                    bleachedLi.push(articleNodeList[h].innerText);
+ 
+
+                                } 
+                                
+                                console.log(AllList);
 
                                 
                                 
