@@ -72,14 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         exactMatches.style.borderBottom = '2px dotted black';
                         // les lettres qui matches avec l'input sont en strong
                         item = item.replace(exactMatch[0], `<strong>${exactMatch[0]}</strong>`); 
-                        exactMatches.innerHTML += `<span><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a></li>`;
+                        exactMatches.innerHTML += `<span id = "nodelist1"><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a></li>`;
                         count1++
 //welley jespere le scope du var est bon 
                     }
                     
                     //zebi c'était pas trop bon
                     
-
+                    articleNodeList = Array.from(document.querySelectorAll("#nodelist1"));
 
                     
 
@@ -102,29 +102,26 @@ document.addEventListener('DOMContentLoaded', () => {
                         let item = results[i];
                         const match = item.match(new RegExp(inputVal, 'i'));
                         item = item.replace(match[0], `<strong>${match[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
-                        matches.innerHTML += `<span><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a></li>`;
+                        matches.innerHTML += `<span id = "nodelist2"><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a></li>`;
                         
 //welley jespere le scope du var est bon 
                         }
 
-                        let spanNodeList = Array.from(document.querySelectorAll("span"));
+                        const spanNodeList = Array.from(document.querySelectorAll("#nodelist2"));
                         
                         
 
 
                     headerSearchField.addEventListener('keydown', function(e) {
 
-                        
-
                         switch (e.keyCode) {
 
                             case 46:
                                 console.log('lol');
-
-                            
-
-                            case 40:
                                 downarrowed = false;
+                                break;
+                            case 40:
+                                downarrowed = true;
 
                                 var bleachedLi = [];
                                 
@@ -134,8 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
  
 
                                 } 
-                                returnCount1 ()
-                                console.log(Count1);
+                                
+                                console.log(spanNodeList);
 
                                 
                                 
