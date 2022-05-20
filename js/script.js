@@ -108,51 +108,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         const spanNodeList = Array.from(document.querySelectorAll("#nodelist2"));
                         const articleNodeList = Array.from(document.querySelectorAll("#nodelist1"));
-                       
+                        var countbar = -1;
                         
 
 
                     headerSearchField.addEventListener('keydown', function(e) {
-
                         switch (e.keyCode) {
 
-                            case 46:
-                                console.log('lol');
-                                downarrowed = false;
-                                break;
                             case 40:
 
                                 downarrowed = true;
 
                                 var AllList = Array.from(document.querySelectorAll("li"));
-
+                                
+                                
                                 var bleachedLi = [];
                                 
-                                for (h = 0; h < spanNodeList.length; h++) {
                                 
-                                    bleachedLi.push(spanNodeList[h].innerText);
+                                for (h = 0; h < AllList.length; h++) {
+                                
+                                    bleachedLi.push(AllList[h].innerText);
  
-
                                 } 
 
-                                for (h = 0; h < articleNodeList.length; h++) {
-                                
-                                    bleachedLi.push(articleNodeList[h].innerText);
- 
 
-                                } 
-                                
-                                console.log(AllList);
 
                                 
-                                
-                                //headerSearchField.value = bleachedLi[0];  
+
+                                if (countbar >= bleachedLi.length - 1) {
+                                countbar = -1;
+                                AllList[countbar+1].style.backgroundColor = 'white';
+                                AllList[bleachedLi.length - 1].style.backgroundColor = 'red';
+                                }
+                                countbar++;
+                                console.log(countbar);
+
+                                headerSearchField.value = bleachedLi[countbar]; 
+                                AllList[countbar-1].style.backgroundColor = 'red';
+                                AllList[countbar].style.backgroundColor = 'white';
  
                                 
 
                                 break;
                         }
+
+
+
+
+   var KeyID = event.keyCode;
+   switch(KeyID)
+   {
+      case 8:
+        downarrowed = false;
+      break; 
+      
+      default:
+      break;
+   }
+    
+                        
+
+
+
+                        
                     });
+
+
 
    
 
