@@ -3,8 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let fields = Array.from(document.getElementsByClassName('field'));
     let headerSearchField = document.getElementById('headersearch');
     let downarrowed = false;
+    let countli = 0;
+    const count1 = 0;
+    const count2 = 0;
     
-    
+  
     
 
     fields.forEach(field => {
@@ -37,8 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         results.push(allData[i]);
                     }
                 }
-            
+
+                
                 return results;
+                
             }
 
             
@@ -49,8 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             //FONCTION QUI AFFICHE LES RESULTATS AVEC STRING EXACTE DANS L'ORDRE.
             function displayExactMatches(results, inputVal) {
-                
+                var count1 = 0;
                 exactMatches.innerHTML = '';
+
+                function returnCount1 () {
+                var count1 = 0;
+                    for (d = 0; d < results.length; d++) {
+                        count1++
+                    }
+                return count1;
+                }
                 
                 if (results.length > 0) {
                     for (i = 0; i < results.length; i++) {
@@ -60,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         // les lettres qui matches avec l'input sont en strong
                         item = item.replace(exactMatch[0], `<strong>${exactMatch[0]}</strong>`); 
                         exactMatches.innerHTML += `<span><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a></li>`;
+                        count1++
 //welley jespere le scope du var est bon 
                     }
                     
@@ -71,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     exactMatches.classList.add('has-suggestions');
                 } else {
+                    count1 = 0;
                     results = [];
                     exactMatches.innerHTML = '';
                     exactMatches.classList.remove('has-suggestions');
@@ -88,30 +103,39 @@ document.addEventListener('DOMContentLoaded', () => {
                         const match = item.match(new RegExp(inputVal, 'i'));
                         item = item.replace(match[0], `<strong>${match[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
                         matches.innerHTML += `<span><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a></li>`;
+                        
 //welley jespere le scope du var est bon 
                         }
 
-
-                        let liNodeList = Array.from(document.querySelectorAll("span"));
+                        let spanNodeList = Array.from(document.querySelectorAll("span"));
                         
                         
 
 
                     headerSearchField.addEventListener('keydown', function(e) {
+
+                        
+
                         switch (e.keyCode) {
+
+                            case 46:
+                                console.log('lol');
+
+                            
+
                             case 40:
-                                downarrowed = true;
+                                downarrowed = false;
 
                                 var bleachedLi = [];
                                 
-                                for (h = 0; h < liNodeList.length; h++) {
+                                for (h = 0; h < spanNodeList.length; h++) {
                                 
-                                    bleachedLi.push(liNodeList[h].innerText);
+                                    bleachedLi.push(spanNodeList[h].innerText);
  
 
                                 } 
-
-                                console.log(bleachedLi);
+                                returnCount1 ()
+                                console.log(Count1);
 
                                 
                                 
@@ -122,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 break;
                         }
                     });
+
    
 
 
@@ -145,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (inputVal.length > 0) {
                             results = search(inputVal);
                         }
-
+                        
                         displayMatches(results, inputVal);
                         displayExactMatches(results, inputVal)
 
