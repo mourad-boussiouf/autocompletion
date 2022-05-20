@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let headerSearchField = document.getElementById('headersearch');
     let downarrowed = false;
     
+    
 
     fields.forEach(field => {
         
@@ -49,33 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
             function displayExactMatches(results, inputVal) {
                 
                 exactMatches.innerHTML = '';
-                let count = -1;
-                if (results.length > 0 ) {
+                
+                if (results.length > 0) {
                     for (i = 0; i < results.length; i++) {
                         let item = results[i];
                         const exactMatch = item.match(new RegExp(`^${inputVal}`, 'gi'));
                         exactMatches.style.borderBottom = '2px dotted black';
-                        item = item.replace(exactMatch[0], `<strong>${exactMatch[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
-                        exactMatches.innerHTML += `<li><span><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a>  ✅</li>`;
-//welley jespere le scope du var est bon
-                        var liNodeList = document.querySelectorAll("span");
+                        // les lettres qui matches avec l'input sont en strong
+                        item = item.replace(exactMatch[0], `<strong>${exactMatch[0]}</strong>`); 
+                        exactMatches.innerHTML += `<span><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a>  ✅</li>`;
+//welley jespere le scope du var est bon 
                     }
-                    
+                    //zebi c'était pas trop bon
                     
 
-                    headerSearchField.addEventListener('keydown', function(e) {
-                        switch (e.keyCode) {
-                            case 40:
-/*                                 downarrowed = true;
-                                count++
-                                headerSearchField.value = results[count]; */
-                                var washedLi = liNodeList[0].innerHTML.replace(`<a href="/autocompletion/element.php/?id=`,``);
-                                var bleachedLi = washedLi.replace(`"></a>`,``);
-
-                                console.log(bleachedLi);
-                                break;
-                        }
-                    });
 
                     
 
@@ -97,16 +85,46 @@ document.addEventListener('DOMContentLoaded', () => {
                         let item = results[i];
                         const match = item.match(new RegExp(inputVal, 'i'));
                         item = item.replace(match[0], `<strong>${match[0]}</strong>`); // les lettres qui matches avec l'input sont en strong
-                        matches.innerHTML += `<li><a href="/autocompletion/element.php/?id=${results[i]}">${item}</a>  ❓</li>`;
+                        matches.innerHTML += `<span><li><a href="/autocompletion/element.php/?id=${results[i]}"></span>${item}</a>  ❓</li>`;
+//welley jespere le scope du var est bon 
+                        }
 
+
+                        var liNodeList = Array.from(document.querySelectorAll("span"));
                         
-                    }
+                        
+                    
 
 
+
+                    headerSearchField.addEventListener('keydown', function(e) {
+                        switch (e.keyCode) {
+                            case 40:
+                                console.log(liNodeList.length);
+                                var washedLi = [];
+                                var bleachedLi = [];
+                                
+                                 for (h = 0; h < liNodeList.length; h++) {
+/*                                  
+
+                                    washedLi[a] = liNodeList[a].replace(`<a href="/autocompletion/element.php/?id=`,``);
+                                    bleachedLi[a] =  liWashed[a].replace(`"></a>`,``); */
+
+                                } 
+/*                                 downarrowed = true;
+                                count++
+                                headerSearchField.value = results[count]; */
+
+                                
+
+                                break;
+                        }
+                    });
    
 
 
                     matches.classList.add('has-suggestions');
+
                 } else {
                     results = [];
                     matches.innerHTML = '';
