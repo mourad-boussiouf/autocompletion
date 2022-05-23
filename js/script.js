@@ -116,71 +116,57 @@ document.addEventListener('DOMContentLoaded', () => {
                         switch (e.keyCode) {
 
                             case 40:
-
                                 downarrowed = true;
 
                                 var AllList = Array.from(document.querySelectorAll("li"));
-                                
-                                
                                 var bleachedLi = [];
                                 
-                                
                                 for (h = 0; h < AllList.length; h++) {
-                                
                                     bleachedLi.push(AllList[h].innerText);
- 
                                 } 
-
-
-
-                                
 
                                 if (countbar >= bleachedLi.length - 1) {
                                 countbar = -1;
                                 AllList[bleachedLi.length - 1].style.background = 'red';
                                 AllList[countbar+1].style.background = 'rgb(255,0,0)';
                                 AllList[countbar+1].style.background = 'linear-gradient(90deg, rgba(255,0,0,1) 49%, rgba(255,255,255,1) 87%)';
-
                                 }
                                 countbar++;
                                 console.log(countbar);
 
                                 headerSearchField.value = bleachedLi[countbar]; 
+
+                                for (m = 0; m < AllList.length; m++) {
+                                    if (headerSearchField.value !== bleachedLi[m] ) {
+                                        AllList[m].style.background = 'red';
+                                        
+                                    
+                                    };
+                                } 
+
                                 if (countbar === 0) {
                                     AllList[0].style.background = 'rgb(255,0,0)';
                                     AllList[countbar].style.background = 'linear-gradient(90deg, rgba(255,0,0,1) 49%, rgba(255,255,255,1) 87%)';
                                 }else{
                                     AllList[0].style.background = 'red';
-                                AllList[countbar-1].style.background = 'red';
-                                AllList[countbar].style.background = 'rgb(255,0,0)';
-                                AllList[countbar].style.background = 'linear-gradient(90deg, rgba(255,0,0,1) 49%, rgba(255,255,255,1) 87%)';}
-
- 
-                                
-
+                                    AllList[countbar-1].style.background = 'red';
+                                    AllList[countbar].style.background = 'rgb(255,0,0)';
+                                    AllList[countbar].style.background = 'linear-gradient(90deg, rgba(255,0,0,1) 49%, rgba(255,255,255,1) 87%)';}
                                 break;
                         }
 
 
-
-
-   var KeyID = event.keyCode;
-   switch(KeyID)
-   {
-      case 8:
-        downarrowed = false;
-      break; 
-      
-      default:
-      break;
-   }
-    
-                        
-
-
-
-                        
-                    });
+                    var KeyID = event.keyCode;
+                    switch(KeyID){
+                        //si backspace est trigger, le search engine redémarre et les suggestions se remettent à s'actualiser.
+                        case 8:
+                        downarrowed = false;
+                        break; 
+                            
+                        default:
+                        break;
+                    }               
+                                            });
 
 
 
