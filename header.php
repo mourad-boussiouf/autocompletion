@@ -26,12 +26,13 @@
     </a>
     </div>
     <h4> Search a dbz character !</h4>
+    <div id = "searchheader">
     <section id="search-engine">
-    <form action="/autocompletion/recherche.php" method="get" class="searchform">
+    <form action="/autocompletion/recherche.php" method="get" class="searchform" >
 
        
 
-        <div class="field">
+        <div class="field" >
             <input type="text" name="search" class="searchbar" id = "headersearch" placeholder="Perso 1" autocomplete="off">
             <div class="suggestionsExactes">
                 <ul></ul>
@@ -43,7 +44,7 @@
         </div>
         <input type="submit" value="🔎" class="btn search-btn">
     </form>
-    
+ </div>
 
 </header>
 </section>

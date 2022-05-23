@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const title = document.querySelector('h2');
     const title2 = document.querySelector('h3');
     const resultDivElement = document.querySelector('#outputPart2');
+    let searchHeader = document.getElementById('searchheader');
+
+
 
     
      
@@ -43,12 +46,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
           uni.append(uniuni);
           resultDivElement.append(uni);
+
           //paramètre de style css ajouté dynamiquement à la box dédié à l'élément
           resultDivElement.style.display = 'flex';
           resultDivElement.style.flexDirection = 'column';
           resultDivElement.style.justifyContent = 'center';
           resultDivElement.style.alignItems = 'center';
           resultDivElement.style.fontFamily = 'monospace';
+          resultDivElement.style.position = 'absolute';
+          resultDivElement.style.top = '60%';
+          resultDivElement.style.left = '41%';
+          searchHeader.style.zIndex = '500';
+          resultDivElement.style.zIndex = '1';
           title.style.fontSize = '28px';
           title2.style.fontSize = '21px';
           
@@ -56,9 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             
     }
-
-
-
 
 
 if(window.location.href.includes('search')) {
@@ -90,13 +96,20 @@ if(window.location.href.includes('search')) {
 
             card.addEventListener('click', function() {
 
-                document.location.href = "../app/element.php?id=" + result.id;
+                document.location.href = "../autocompletion/element.php?id=" + result.nom;
             });
         });
     })
     .catch((err) => console.log(err));
 
     
+}
+
+
+if(window.location.href.includes('index')) {
+
+    searchHeader.style.visibility = 'hidden';
+
 }
 
 });
