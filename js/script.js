@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let fields = Array.from(document.getElementsByClassName('field'));
     let headerSearchField = document.getElementById('headersearch');
+    let indexSearchField = document.getElementById('indexsearch');
     let downarrowed = false;
     let countli = 0;
     const count1 = 0;
@@ -109,9 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         const spanNodeList = Array.from(document.querySelectorAll("#nodelist2"));
                         const articleNodeList = Array.from(document.querySelectorAll("#nodelist1"));
                         var countbar = -1;
+                        var countbar2 = -1;
                         
 
-
+// arrow down de la barre header
                     headerSearchField.addEventListener('keydown', function(e) {
                         switch (e.keyCode) {
 
@@ -152,6 +154,63 @@ document.addEventListener('DOMContentLoaded', () => {
                                     AllList[countbar-1].style.background = 'red';
                                     AllList[countbar].style.background = 'rgb(255,0,0)';
                                     AllList[countbar].style.background = 'linear-gradient(90deg, rgba(255,0,0,1) 49%, rgba(255,255,255,1) 87%)';}
+                                break;
+                        }
+
+
+                    var KeyID = event.keyCode;
+                    switch(KeyID){
+                        //si backspace est trigger, le search engine redémarre et les suggestions se remettent à s'actualiser.
+                        case 8:
+                        downarrowed = false;
+                        break; 
+                            
+                        default:
+                        break;
+                    }               
+                                            });
+
+                    // arrow down de la barre index
+                    indexSearchField.addEventListener('keydown', function(e) {
+                        switch (e.keyCode) {
+
+                            case 40:
+                                downarrowed = true;
+
+                                var AllList = Array.from(document.querySelectorAll("li"));
+                                var bleachedLi = [];
+                                
+                                for (h = 0; h < AllList.length; h++) {
+                                    bleachedLi.push(AllList[h].innerText);
+                                } 
+
+                                if (countbar2 >= bleachedLi.length - 1) {
+                                countbar2 = -1;
+                                AllList[bleachedLi.length - 1].style.background = 'red';
+                                AllList[countbar2+1].style.background = 'rgb(255,0,0)';
+                                AllList[countbar2+1].style.background = 'linear-gradient(90deg, rgba(255,0,0,1) 49%, rgba(255,255,255,1) 87%)';
+                                }
+                                countbar2++;
+                                console.log(countbar2);
+
+                                indexSearchField.value = bleachedLi[countbar2]; 
+
+                                for (m = 0; m < AllList.length; m++) {
+                                    if (indexSearchField.value !== bleachedLi[m] ) {
+                                        AllList[m].style.background = 'red';
+                                        
+                                    
+                                    };
+                                } 
+
+                                if (countbar2 === 0) {
+                                    AllList[0].style.background = 'rgb(255,0,0)';
+                                    AllList[countbar2].style.background = 'linear-gradient(90deg, rgba(255,0,0,1) 49%, rgba(255,255,255,1) 87%)';
+                                }else{
+                                    AllList[0].style.background = 'red';
+                                    AllList[countbar2-1].style.background = 'red';
+                                    AllList[countbar2].style.background = 'rgb(255,0,0)';
+                                    AllList[countbar2].style.background = 'linear-gradient(90deg, rgba(255,0,0,1) 49%, rgba(255,255,255,1) 87%)';}
                                 break;
                         }
 

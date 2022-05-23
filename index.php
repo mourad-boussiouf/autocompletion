@@ -18,7 +18,7 @@ Personnages::LoadAllDDB();
    
 
     <div class="field" class = indexsearch>
-            <input type="text" name="search" class="searchbar" class="Indexsearchbar2" placeholder="Perso 2" autocomplete="off">
+            <input type="text" name="search" class="searchbar" class="Indexsearchbar2" id = "indexsearch" placeholder="Perso 2" autocomplete="off">
 			<div class="suggestionsExactes">
                 <ul></ul>
             </div>
