@@ -105,10 +105,22 @@ if(window.location.href.includes('search')) {
 
             foundornot = false
             }
+if (foundornot === true) {
+
+    let card = document.createElement('div');
+    card.className = 'card';
+    
+    let personnages = document.createElement('h1');
+    personnages.className = 'personnages';
+    personnages.innerHTML = '404 not found';
+
+    card.append(personnages);
+
+    resultDiv.append(card);
 
 
-            console.log(foundornot);
-            console.log(resultDiv.innerHTML);
+    
+}
 
     })
     .catch((err) => console.log(err));
