@@ -75,11 +75,11 @@ if(window.location.href.includes('search')) {
     .then((res) => res.json())
     .then(function(data){
 
-        
+        var foundornot = true;
         data.forEach(function(result) {
 
             const resultsDiv = document.querySelector('#results');
-
+            
             
             let card = document.createElement('div');
             card.className = 'card';
@@ -93,15 +93,27 @@ if(window.location.href.includes('search')) {
 
             resultDiv.append(card);
 
+ 
 
             card.addEventListener('click', function() {
 
                 document.location.href = "../autocompletion/element.php?id=" + result.nom;
             });
         });
+
+        if(resultDiv.innerHTML.includes("div")) {
+
+            foundornot = false
+            }
+
+
+            console.log(foundornot);
+            console.log(resultDiv.innerHTML);
+
     })
     .catch((err) => console.log(err));
 
+    
     
 }
 
