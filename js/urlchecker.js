@@ -71,7 +71,7 @@ if(window.location.href.includes('search')) {
 
     
 
-    fetch('search.json')
+    fetch('/autocompletion/search.json')
     .then((res) => res.json())
     .then(function(data){
 

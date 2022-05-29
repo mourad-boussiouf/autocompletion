@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 allData.push(item);
             });
             
-            console.log(allData);
+           
 
             function search(str) {
                 let results = [];
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 AllList[countbar+1].style.background = 'linear-gradient(90deg, rgba(255,0,0,1) 49%, rgba(255,255,255,1) 87%)';
                                 }
                                 countbar++;
-                                console.log(countbar);
+                                
 
                                 headerSearchField.value = bleachedLi[countbar]; 
 

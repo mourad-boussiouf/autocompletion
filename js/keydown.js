@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 allData.push(item);
             });
             
-            console.log(allData);
+            
 
             function search(str) {
                 let results = [];
